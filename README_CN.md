@@ -4,12 +4,12 @@
 <br>
 
 <div align="center">
-  <img src="assets/atria.png" width="60%" alt="Atria Dawn Preview" />
+  <img src="assets/atria.png" width="60%" alt="Atria-Dawn" />
 </div>
 
 <div align="center">
 
-# Atria Dawn Preview: 从研究问题到可验证的结果
+# Atria-Dawn: 从研究问题到可验证的结果
 
 <!-- markdownlint-disable first-line-h1 -->
 <!-- markdownlint-disable html -->
@@ -63,9 +63,9 @@
 
 ## 介绍
 
-Atria Dawn Preview 是由上海人工智能实验室研发的新一代智能体大模型预览版，模型基于 744B MoE GLM-5.2 基座进行训练，面向需要持续理解环境、调用工具并完成多步任务的研究与工程场景。该模型旨在协助用户将开放性问题推进为可执行、可验证和可复现的结果。模型能够结合任务目标与环境反馈，参与问题分析、方案设计、工具调用、代码实现、实验执行、结果分析以及失败恢复等环节。
+Atria-Dawn 是由上海人工智能实验室研发的新一代智能体大模型，模型基于 744B MoE GLM-5.2 基座进行训练，面向需要持续理解环境、调用工具并完成多步任务的研究与工程场景。该模型旨在协助用户将开放性问题推进为可执行、可验证和可复现的结果。模型能够结合任务目标与环境反馈，参与问题分析、方案设计、工具调用、代码实现、实验执行、结果分析以及失败恢复等环节。
 
-Atria Dawn Preview 从以下四个维度赋能智能体任务，重点强化了在科研自动化、办公等真实生产力场景下的端到端交付能力。
+Atria-Dawn 从以下四个维度赋能智能体任务，重点强化了在科研自动化、办公等真实生产力场景下的端到端交付能力。
 
 - **Discovery：** 检索和组织证据，开展深度研究，并将研究问题转化为可执行的实验方案。
 - **Creation：** 构建软件、交互应用、游戏、数据可视化和机器学习系统。
@@ -80,6 +80,8 @@ Atria Dawn Preview 从以下四个维度赋能智能体任务，重点强化了�
 
 | **模型名** | **简介** | **上下文** | **Hugging Face** | **ModelScope** |
 | :---: | :---: | :---: | :---: | :---: |
+| Atria-Dawn | Instruct 模型（正式版） | 256K | Coming soon | Coming soon |
+| Atria-Dawn-FP8 | FP8量化Instruct模型（正式版） | 256K | Coming soon | Coming soon |
 | Atria-Dawn-Preview | Instruct 模型 | 256K | [Model](https://huggingface.co/internlm/Atria-Dawn-Preview) | [Model](https://www.modelscope.cn/models/Shanghai_AI_Laboratory/Atria-Dawn-Preview) |
 | Atria-Dawn-Preview-FP8 | FP8量化Instruct模型 | 256K| [Model](https://huggingface.co/internlm/Atria-Dawn-Preview-FP8) | [Model](https://www.modelscope.cn/models/Shanghai_AI_Laboratory/Atria-Dawn-Preview-FP8) |
 
@@ -87,36 +89,43 @@ Atria Dawn Preview 从以下四个维度赋能智能体任务，重点强化了�
 
 
 ## 性能评估
-我们对Atria Dawn Preview进行了全面评估。以下是部分评测结果。
+我们对 Atria-Dawn 和 Atria-Dawn-Preview 进行了全面评估。以下完整大表与[官网](https://atria-asi.ai/)同步。
 
 
 <div align="center">
-  <img src="assets/evaluation.png" width="100%" alt="Atria Dawn Preview Evaluation Results" />
+  <img src="assets/evaluation.jpg" width="100%" alt="Atria-Dawn and Atria-Dawn-Preview Evaluation Results" />
 </div>
-<!-- todo: 柱状图注释 -->
 
 <div align="center">
 
-| Benchmark | Atria Dawn Preview | DeepSeek V4 Pro 0813 | KIMI K3 | Qwen 3.8 Max | GLM 5.3 | GPT 5.6 sol | Claude Opus 5 |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| AutomationBench | 53.8 | 41.7 | 45.9 | 49.7 | 49.2 | 45.7 | 49.4 |
-| BFCL v4 | 77.0 | 71.4 | 69.1 | - | 74.1 | - | - |
-| CyberGym | 86.5 | 83.3 | 78.7 | 73.8 | 84.5 | 83.6 | - |
-| DeepSearchQA | 96.0 | - | 95.9 | - | 94.7 | 93.2 | - |
-| Workspace-Bench-Lite | 68.2 | 58.1 | 65.8 | 67.4 | 67.7 | 60.5 | 70.1 |
-| BrowseComp | 92.5 | 83.4 | 91.2 | - | - | 92.2 | 90.8 |
-| SkillsBench | 66.4 | 65.0 | 51.9 | 66.7 | 63.3 | 62.5 | 63.7 |
-| Workspace-Bench | 65.0 | 55.7 | 60.6 | 63.9 | 63.9 | 56.0 | 65.8 |
-| MLE-bench Lite | 86.2 | 86.8 | 85.8 | 81.3 | 80.8 | 88.9 | 88.0 |
-| WideSearch | 81.9 | - | 79.6 | 81.9 | 82.7 | 83.3 | - |
-| DeepResearch Bench II | 51.1 | 46.6 | 51.3 | 49.2 | 52.7 | 50.7 | 54.1 |
-| τ³-Bench Banking | 41.2 | 44.3 | 37.1 | 55.2 | 40.2 | 46.9 | 48.7 |
-| Terminal-Bench 2.1 | 78.3 | 78.7 | - | 89.3 | 85.4 | 85.1 | 90.2 |
-| GDPval | 1583 | 1517 | 1611 | 1722 | 1667 | 1682 | 1768 |
-| SWE-bench Pro | 59.6 | 58.3 | 61.6 | 65.1 | 60.3 | 61.4 | 74.7 |
-| JobBench | 50.3 | 54.1 | 54.3 | 52.7 | 58.2 | 45.4 | 68.0 |
+| 评测项目 | Atria Dawn | Atria Dawn Preview | DeepSeek V4 Pro 0813 | KIMI K3 | Qwen 3.8 Max | GLM 5.3 | GPT 5.6 sol | Claude Opus 5 |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| AutomationBench | **54.7** | 53.8 | 41.7 | 45.9 | 49.7 | 52.5 | 45.7 | 49.4 |
+| CyberGym | **86.8** | 86.5 | 83.3 | 78.7 | 73.8 | 84.5 | 83.6 | – |
+| SkillsBench | **67.8** | 66.4 | 65.0 | 51.9 | 66.7 | 63.3 | 62.5 | 63.7 |
+| WideSearch | **84.6** | 81.9 | 81.8 | 79.6 | 81.9 | 82.7 | 83.3 | 84.0 |
+| MLE-bench Lite | 88.2 | 86.2 | 86.8 | 85.8 | 81.3 | 80.8 | **88.9** | 88.0 |
+| Workspace-Bench-Lite | 70.0 | 68.2 | 62.1 | 64.9 | 68.7 | **71.7** | 60.5 | 70.1 |
+| Workspace-Bench | 66.1 | 65.0 | 58.2 | 63.5 | **68.0** | 67.4 | 56.0 | 65.8 |
+| PaperBench | 89.6 | 87.0 | 87.4 | 80.5 | **94.1** | 86.9 | 92.8 | 88.9 |
+| JobBench | 57.5 | 50.3 | 54.1 | 54.3 | 52.7 | 58.2 | 45.4 | **68.0** |
+| DeepResearch Bench II | 51.2 | 51.1 | 46.6 | 51.3 | 49.2 | 52.7 | 50.7 | **54.1** |
+| SpreadsheetBench 2 | 33.0 | 31.5 | 29.3 | **35.8** | 34.9 | 32.1 | 32.7 | 33.6 |
+| τ³-bench Banking | 43.3 | 41.2 | 44.3 | 37.1 | **55.2** | 40.2 | 46.9 | 48.7 |
+| Terminal-Bench 2.1 | 81.0 | 78.3 | 77.0 | 84.0 | 89.6 | 86.0 | 86.2 | **90.2** |
+| SWE-bench Pro | 59.4 | 59.6 | 58.4 | 62.0 | 65.3 | 60.3 | 59.8 | **76.5** |
+| NL2Repo-Bench | 50.0 | 51.4 | 49.5 | 63.1 | 63.2 | 54.8 | 60.7 | **79.9** |
+| Harbor-Index | 17.3 | 17.3 | 17.0 | 24.3 | 25.8 | 20.0 | 35.8 | **41.0** |
+| DeepSWE | 49.3 | 29.2 | 54.9 | 70.6 | 67.0 | 67.3 | 70.6 | **72.6** |
+| Harvey LAB | **27.5** | – | 6.7 | 25.4 | 24.2 | 22.5 | 5.0 | 22.7 |
+| BFCL V4 | **78.4** | 77.0 | 71.4 | 69.1 | – | 74.1 | – | – |
+| DeepSearchQA | **96.5** | 96.0 | – | 95.9 | – | 94.7 | 93.2 | – |
+| OfficeQA Pro | 67.1 | – | 66.2 | 65.4 | 66.2 | 65.8 | 66.4 | **67.2** |
+| BrowseComp | 91.3 | **92.5** | 83.4 | 91.2 | – | 89.6 | 92.2 | 90.8 |
 
 </div>
+
+> **加粗**表示该行最高分，`–` 表示结果不可用。
 
 
 <!-- ## How to Run Locally
@@ -129,7 +138,7 @@ Atria Dawn Preview 从以下四个维度赋能智能体任务，重点强化了�
 
 ## 部署和在线使用
 
-Atria Dawn Preview 支持本地部署与在线调用。有关在线调用，请使用您所在地区对应的服务。
+Atria-Dawn 支持本地部署与在线调用。有关在线调用，请使用您所在地区对应的服务。
 
 | 地区                | 使用链接                                                                  | 教程                                                                        |
 | ----------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------- |
@@ -146,7 +155,7 @@ Atria Dawn Preview 支持本地部署与在线调用。有关在线调用，请�
 将自定义 provider 添加到 `~/.codex/config.toml`。Codex 使用 Responses API。
 
 ```toml
-model = "Atria-Dawn-Preview"
+model = "Atria-Dawn"
 model_provider = "atria"
 
 [model_providers.atria]
@@ -158,7 +167,7 @@ wire_api = "responses"
 
 #### 将输入限制为纯文本
 
-`Atria-Dawn-Preview` 只接受文本输入。Codex 默认会假设每个模型都支持多模态输入，并会附加通过 `-i/--image` 或 TUI 粘贴的图片；而该端点会因此返回 `400 Atria-Dawn-Preview is not a multimodal model` 错误。需要声明模型支持的输入模态，让 Codex 在客户端直接移除图片输入。
+`Atria-Dawn` 只接受文本输入。Codex 默认会假设每个模型都支持多模态输入，并会附加通过 `-i/--image` 或 TUI 粘贴的图片；而该端点会因此返回 `400 Atria-Dawn is not a multimodal model` 错误。需要声明模型支持的输入模态，让 Codex 在客户端直接移除图片输入。
 
 ##### 第 1 步：创建模型目录文件
 
@@ -168,8 +177,8 @@ wire_api = "responses"
 {
   "models": [
     {
-      "slug": "Atria-Dawn-Preview",
-      "display_name": "Atria-Dawn-Preview",
+      "slug": "Atria-Dawn",
+      "display_name": "Atria-Dawn",
       "base_instructions": "你是运行在 Codex CLI 中的编程代理。你将在共享工作区中与用户协作，完成软件工程目标。\n\n你只能接收文本输入。你无法获取图片、截图、PDF 或其他二进制附件。如果用户提到你无法查看的附件，请直接说明这一点，并要求用户粘贴相关文本。",
       "supported_reasoning_levels": [
         { "effort": "low", "description": "快速响应，使用较轻量的推理" },
@@ -200,7 +209,7 @@ wire_api = "responses"
 ##### 第 2 步：让配置指向该文件
 
 ```toml
-model = "Atria-Dawn-Preview"
+model = "Atria-Dawn"
 model_provider = "atria"
 model_catalog_json = "~/.codex/atria-catalog.json"
 
@@ -320,7 +329,7 @@ cp -a ~/.kimi-code/config.toml ~/.kimi-code/config.toml.bak
 将以下内容合并到 `~/.kimi-code/config.toml`。将 `default_model` 保持在顶层，并放在各个表之前。请更新已有条目，不要重复添加字段或表。将你的 `atr_...` 密钥填入 `api_key` 行中。密钥在 Atria 控制台创建，并且只会显示一次。
 
 ```toml
-default_model = "atria/Atria-Dawn-Preview"
+default_model = "atria/Atria-Dawn"
 
 [providers.atria]
 type = "openai"
@@ -329,11 +338,11 @@ base_url = "https://api.atria-asi.ai/v1"
 # 只能使用字面量：不会展开 ${VAR}，也不会读取 OPENAI_API_KEY
 api_key = "ATRIA_API_KEY"
 
-[models."atria/Atria-Dawn-Preview"]
+[models."atria/Atria-Dawn"]
 provider = "atria"
 # 区分大小写的实际请求名称，与上面的表名不同（上面的表名是本地别名）
-model = "Atria-Dawn-Preview"
-display_name = "Atria Dawn Preview"
+model = "Atria-Dawn"
+display_name = "Atria-Dawn"
 # 必填：缺少此项时，该条目会静默加载失败。请保持为实际限制值，
 # 这样上下文预算和压缩功能才能正常工作。
 max_context_size = 256000
@@ -377,7 +386,7 @@ OK config.toml  /home/<user>/.kimi-code/config.toml
 All checked config files are valid.
 
 atria  type=openai  models=1  source=inline
-Default model: atria/Atria-Dawn-Preview
+Default model: atria/Atria-Dawn
 ```
 
 如果 provider 列表中没有 `atria`，说明模型条目解析失败，最常见的原因是缺少 `max_context_size`。
@@ -399,7 +408,7 @@ Default model: atria/Atria-Dawn-Preview
 - 📱 **微信社群** — 扫描下方二维码加入 Atria 交流群⑦
 
 <p align="center">
-  <img src="assets/wechat-community-7.jpg" alt="Atria 微信交流群 7 二维码" width="320" />
+  <img src="assets/wechat-community-7.png" alt="Atria 微信交流群 7 二维码" width="320" />
 </p>
 
 ## 引用

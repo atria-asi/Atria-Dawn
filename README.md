@@ -7,12 +7,12 @@
 </p>
 
 <div align="center">
-  <img src="assets/atria.png" width="60%" alt="Atria Dawn Preview" />
+  <img src="assets/atria.png" width="60%" alt="Atria-Dawn" />
 </div>
 
 <div align="center">
 
-# Atria Dawn Preview
+# Atria-Dawn
 
 **From Research Questions to Verifiable Results**
 
@@ -65,11 +65,11 @@
 
 ## 🌅 Introduction
 
-**Atria Dawn Preview** is a preview release of a new-generation agentic model developed by the **Shanghai Artificial Intelligence Laboratory**. Built on the **744B-parameter MoE GLM-5.2** foundation model, it targets research and engineering scenarios that demand continuous environmental understanding, tool use, and multi-step task completion.
+**Atria-Dawn** is a new-generation agentic model developed by the **Shanghai Artificial Intelligence Laboratory**. Built on the **744B-parameter MoE GLM-5.2** foundation model, it targets research and engineering scenarios that demand continuous environmental understanding, tool use, and multi-step task completion.
 
 The model is designed to drive open-ended problems toward **executable, verifiable, and reproducible** results. By combining task objectives with environmental feedback, it supports the full loop of problem analysis, solution design, tool use, code implementation, experiment execution, result analysis, and failure recovery.
 
-Atria Dawn Preview empowers agentic tasks across four dimensions, with a particular focus on end-to-end delivery in real-world productivity scenarios such as scientific automation and office work:
+Atria-Dawn empowers agentic tasks across four dimensions, with a particular focus on end-to-end delivery in real-world productivity scenarios such as scientific automation and office work:
 
 <div align="center">
 
@@ -88,6 +88,8 @@ Atria Dawn Preview empowers agentic tasks across four dimensions, with a particu
 
 | Model | Description | Context | Hugging Face | ModelScope |
 | :--- | :--- | :---: | :---: | :---: |
+| **Atria-Dawn** | Instruct model (full release) | 256K | Coming soon | Coming soon |
+| **Atria-Dawn-FP8** | FP8-quantized Instruct model (full release) | 256K | Coming soon | Coming soon |
 | **Atria-Dawn-Preview** | Instruct model | 256K | [🤗 Model](https://huggingface.co/internlm/Atria-Dawn-Preview) | [🔗 Model](https://www.modelscope.cn/models/Shanghai_AI_Laboratory/Atria-Dawn-Preview) |
 | **Atria-Dawn-Preview-FP8** | FP8-quantized Instruct model | 256K | [🤗 Model](https://huggingface.co/internlm/Atria-Dawn-Preview-FP8) | [🔗 Model](https://www.modelscope.cn/models/Shanghai_AI_Laboratory/Atria-Dawn-Preview-FP8) |
 
@@ -95,33 +97,38 @@ Atria Dawn Preview empowers agentic tasks across four dimensions, with a particu
 
 ## 📊 Evaluation Results
 
-We conducted a comprehensive evaluation of Atria Dawn Preview across search, coding, tool use, productivity, and security benchmarks.
+We evaluated Atria-Dawn and Atria-Dawn-Preview across search, coding, tool use, productivity, and security benchmarks. The full table below matches the [official website](https://atria-asi.ai/).
 
 <div align="center">
-  <img src="assets/evaluation.png" width="100%" alt="Atria Dawn Preview Evaluation Results" />
+  <img src="assets/evaluation.jpg" width="100%" alt="Atria-Dawn and Atria-Dawn-Preview Evaluation Results" />
 </div>
-<!-- TODO: Add chart annotations. -->
 
 <div align="center">
 
-| Category | Benchmark | **Atria**<br>Dawn Preview | DeepSeek<br>V4 Pro 0813 | KIMI<br>K3 | Qwen<br>3.8 Max | GLM<br>5.3 | GPT<br>5.6 sol | Claude<br>Opus 5 |
-| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Discovery** | DeepSearchQA | **96.0** | – | 95.9 | – | 94.7 | 93.2 | – |
-| | BrowseComp | **92.5** | 83.4 | 91.2 | – | – | 92.2 | 90.8 |
-| | WideSearch | 81.9 | – | 79.6 | 81.9 | 82.7 | **83.3** | – |
-| | DeepResearch Bench II | 51.1 | 46.6 | 51.3 | 49.2 | 52.7 | 50.7 | **54.1** |
-| **Creation** | MLE-bench Lite | 86.2 | 86.8 | 85.8 | 81.3 | 80.8 | **88.9** | 88.0 |
-| | SWE-bench Pro | 59.6 | 58.3 | 61.6 | 65.1 | 60.3 | 61.4 | **74.7** |
-| | Terminal-Bench 2.1 | 78.3 | 78.7 | – | 89.3 | 85.4 | 85.1 | **90.2** |
-| **Tool Use** | BFCL v4 | **77.0** | 71.4 | 69.1 | – | 74.1 | – | – |
-| | AutomationBench | **53.8** | 41.7 | 45.9 | 49.7 | 49.2 | 45.7 | 49.4 |
-| | SkillsBench | 66.4 | 65.0 | 51.9 | **66.7** | 63.3 | 62.5 | 63.7 |
-| | τ³-Bench Banking | 41.2 | 44.3 | 37.1 | **55.2** | 40.2 | 46.9 | 48.7 |
-| **Delivery** | Workspace-Bench | 65.0 | 55.7 | 60.6 | 63.9 | 63.9 | 56.0 | **65.8** |
-| | Workspace-Bench-Lite | 68.2 | 58.1 | 65.8 | 67.4 | 67.7 | 60.5 | **70.1** |
-| | GDPval | 1583 | 1517 | 1611 | 1722 | 1667 | 1682 | **1768** |
-| | JobBench | 50.3 | 54.1 | 54.3 | 52.7 | 58.2 | 45.4 | **68.0** |
-| **Cybersecurity** | CyberGym | **86.5** | 83.3 | 78.7 | 73.8 | 84.5 | 83.6 | – |
+| Benchmark | Atria Dawn | Atria Dawn Preview | DeepSeek V4 Pro 0813 | KIMI K3 | Qwen 3.8 Max | GLM 5.3 | GPT 5.6 sol | Claude Opus 5 |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| AutomationBench | **54.7** | 53.8 | 41.7 | 45.9 | 49.7 | 52.5 | 45.7 | 49.4 |
+| CyberGym | **86.8** | 86.5 | 83.3 | 78.7 | 73.8 | 84.5 | 83.6 | – |
+| SkillsBench | **67.8** | 66.4 | 65.0 | 51.9 | 66.7 | 63.3 | 62.5 | 63.7 |
+| WideSearch | **84.6** | 81.9 | 81.8 | 79.6 | 81.9 | 82.7 | 83.3 | 84.0 |
+| MLE-bench Lite | 88.2 | 86.2 | 86.8 | 85.8 | 81.3 | 80.8 | **88.9** | 88.0 |
+| Workspace-Bench-Lite | 70.0 | 68.2 | 62.1 | 64.9 | 68.7 | **71.7** | 60.5 | 70.1 |
+| Workspace-Bench | 66.1 | 65.0 | 58.2 | 63.5 | **68.0** | 67.4 | 56.0 | 65.8 |
+| PaperBench | 89.6 | 87.0 | 87.4 | 80.5 | **94.1** | 86.9 | 92.8 | 88.9 |
+| JobBench | 57.5 | 50.3 | 54.1 | 54.3 | 52.7 | 58.2 | 45.4 | **68.0** |
+| DeepResearch Bench II | 51.2 | 51.1 | 46.6 | 51.3 | 49.2 | 52.7 | 50.7 | **54.1** |
+| SpreadsheetBench 2 | 33.0 | 31.5 | 29.3 | **35.8** | 34.9 | 32.1 | 32.7 | 33.6 |
+| τ³-bench Banking | 43.3 | 41.2 | 44.3 | 37.1 | **55.2** | 40.2 | 46.9 | 48.7 |
+| Terminal-Bench 2.1 | 81.0 | 78.3 | 77.0 | 84.0 | 89.6 | 86.0 | 86.2 | **90.2** |
+| SWE-bench Pro | 59.4 | 59.6 | 58.4 | 62.0 | 65.3 | 60.3 | 59.8 | **76.5** |
+| NL2Repo-Bench | 50.0 | 51.4 | 49.5 | 63.1 | 63.2 | 54.8 | 60.7 | **79.9** |
+| Harbor-Index | 17.3 | 17.3 | 17.0 | 24.3 | 25.8 | 20.0 | 35.8 | **41.0** |
+| DeepSWE | 49.3 | 29.2 | 54.9 | 70.6 | 67.0 | 67.3 | 70.6 | **72.6** |
+| Harvey LAB | **27.5** | – | 6.7 | 25.4 | 24.2 | 22.5 | 5.0 | 22.7 |
+| BFCL V4 | **78.4** | 77.0 | 71.4 | 69.1 | – | 74.1 | – | – |
+| DeepSearchQA | **96.5** | 96.0 | – | 95.9 | – | 94.7 | 93.2 | – |
+| OfficeQA Pro | 67.1 | – | 66.2 | 65.4 | 66.2 | 65.8 | 66.4 | **67.2** |
+| BrowseComp | 91.3 | **92.5** | 83.4 | 91.2 | – | 89.6 | 92.2 | 90.8 |
 
 </div>
 
@@ -137,7 +144,7 @@ Add instructions for local inference, deployment, and environment setup here.
 
 ## 🚀 Deployment & Online Access
 
-Atria Dawn Preview supports both local deployment and hosted access.
+Atria-Dawn supports both local deployment and hosted access.
 
 ### Online Access
 
@@ -167,7 +174,7 @@ Use the service endpoint corresponding to your region.
 Add a custom provider to `~/.codex/config.toml`. Codex uses the Responses API.
 
 ```toml
-model = "Atria-Dawn-Preview"
+model = "Atria-Dawn"
 model_provider = "atria"
 [model_providers.atria]
 name = "Atria"
@@ -178,9 +185,9 @@ wire_api = "responses"
 
 #### Restricting input to text only
 
-`Atria-Dawn-Preview` accepts text input only. By default Codex assumes every model is
+`Atria-Dawn` accepts text input only. By default Codex assumes every model is
 multimodal and will attach images from `-i/--image` or a TUI paste, which the endpoint
-rejects with `400 Atria-Dawn-Preview is not a multimodal model`. Declare the model's
+rejects with `400 Atria-Dawn is not a multimodal model`. Declare the model's
 modalities so Codex strips image input on the client side instead.
 
 ##### Step 1 — Create a model catalog file
@@ -191,8 +198,8 @@ Save this as `~/.codex/atria-catalog.json`:
 {
   "models": [
     {
-      "slug": "Atria-Dawn-Preview",
-      "display_name": "Atria-Dawn-Preview",
+      "slug": "Atria-Dawn",
+      "display_name": "Atria-Dawn",
       "base_instructions": "You are a coding agent running in the Codex CLI. You collaborate with the user in a shared workspace to accomplish their software engineering goals.\n\nYou can only receive text input. Images, screenshots, PDFs, and other binary attachments are not available to you. If the user refers to an attachment you cannot see, say so plainly and ask them to paste the relevant text instead.",
       "supported_reasoning_levels": [
         { "effort": "low", "description": "Fast responses with lighter reasoning" },
@@ -226,7 +233,7 @@ All other fields are required by the parser — omitting any one fails with
 ##### Step 2 — Point your config at it
 
 ```toml
-model = "Atria-Dawn-Preview"
+model = "Atria-Dawn"
 model_provider = "atria"
 model_catalog_json = "~/.codex/atria-catalog.json"
 [features]
@@ -338,7 +345,7 @@ cp -a ~/.kimi-code/config.toml ~/.kimi-code/config.toml.bak
 Merge this into `~/.kimi-code/config.toml`. Keep `default_model` at the top level, before the tables. Update existing entries instead of duplicating fields or tables. Your `atr_...` key goes on the `api_key` line — keys are created in the Atria console and displayed only once.
 
 ```toml
-default_model = "atria/Atria-Dawn-Preview"
+default_model = "atria/Atria-Dawn"
 
 [providers.atria]
 type = "openai"
@@ -347,11 +354,11 @@ base_url = "https://api.atria-asi.ai/v1"
 # literal value only: no ${VAR} expansion, and OPENAI_API_KEY is not read
 api_key = "ATRIA_API_KEY"
 
-[models."atria/Atria-Dawn-Preview"]
+[models."atria/Atria-Dawn"]
 provider = "atria"
 # case-sensitive wire name, separate from the section key above (a local alias)
-model = "Atria-Dawn-Preview"
-display_name = "Atria Dawn Preview"
+model = "Atria-Dawn"
+display_name = "Atria-Dawn"
 # required — without it the entry silently fails to load. Keep at the real limit
 # so context budgeting and compaction work.
 max_context_size = 256000
@@ -395,7 +402,7 @@ OK config.toml  /home/<user>/.kimi-code/config.toml
 All checked config files are valid.
 
 atria  type=openai  models=1  source=inline
-Default model: atria/Atria-Dawn-Preview
+Default model: atria/Atria-Dawn
 ```
 
 If `atria` is missing from the provider list, the model entry failed to resolve — most often an absent `max_context_size`.
@@ -421,7 +428,7 @@ Questions, suggestions, or collaboration ideas are welcome:
 - 🐦 **Updates** — follow [@AtriaASI](https://x.com/AtriaASI) on X
 
 <p align="center">
-  <img src="assets/wechat-community-7.jpg" alt="Atria WeChat community group 7 QR code" width="320" />
+  <img src="assets/wechat-community-7.png" alt="Atria WeChat community group 7 QR code" width="320" />
 </p>
 
 ## Citation

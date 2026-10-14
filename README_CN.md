@@ -4,12 +4,12 @@
 <br>
 
 <div align="center">
-  <img src="assets/atria.png" width="60%" alt="Atria-Dawn" />
+  <img src="assets/atria.png" width="60%" alt="Atria Dawn" />
 </div>
 
 <div align="center">
 
-# Atria-Dawn: 从研究问题到可验证的结果
+# Atria Dawn: 从研究问题到可验证的结果
 
 <!-- markdownlint-disable first-line-h1 -->
 <!-- markdownlint-disable html -->
@@ -63,9 +63,9 @@
 
 ## 介绍
 
-Atria-Dawn 是由上海人工智能实验室研发的新一代智能体大模型，模型基于 744B MoE GLM-5.2 基座进行训练，面向需要持续理解环境、调用工具并完成多步任务的研究与工程场景。该模型旨在协助用户将开放性问题推进为可执行、可验证和可复现的结果。模型能够结合任务目标与环境反馈，参与问题分析、方案设计、工具调用、代码实现、实验执行、结果分析以及失败恢复等环节。
+Atria Dawn 是由上海人工智能实验室研发的新一代智能体大模型，模型基于 744B MoE GLM-5.2 基座进行训练，面向需要持续理解环境、调用工具并完成多步任务的研究与工程场景。该模型旨在协助用户将开放性问题推进为可执行、可验证和可复现的结果。模型能够结合任务目标与环境反馈，参与问题分析、方案设计、工具调用、代码实现、实验执行、结果分析以及失败恢复等环节。
 
-Atria-Dawn 从以下四个维度赋能智能体任务，重点强化了在科研自动化、办公等真实生产力场景下的端到端交付能力。
+Atria Dawn 从以下四个维度赋能智能体任务，重点强化了在科研自动化、办公等真实生产力场景下的端到端交付能力。
 
 - **Discovery：** 检索和组织证据，开展深度研究，并将研究问题转化为可执行的实验方案。
 - **Creation：** 构建软件、交互应用、游戏、数据可视化和机器学习系统。
@@ -80,20 +80,21 @@ Atria-Dawn 从以下四个维度赋能智能体任务，重点强化了在科研
 
 | **模型名** | **简介** | **上下文** | **Hugging Face** | **ModelScope** |
 | :---: | :---: | :---: | :---: | :---: |
-| Atria-Dawn | Instruct 模型（正式版） | 256K | Coming soon | Coming soon |
-| Atria-Dawn-FP8 | FP8量化Instruct模型（正式版） | 256K | Coming soon | Coming soon |
-| Atria-Dawn-Preview | Instruct 模型 | 256K | [Model](https://huggingface.co/internlm/Atria-Dawn-Preview) | [Model](https://www.modelscope.cn/models/Shanghai_AI_Laboratory/Atria-Dawn-Preview) |
-| Atria-Dawn-Preview-FP8 | FP8量化Instruct模型 | 256K| [Model](https://huggingface.co/internlm/Atria-Dawn-Preview-FP8) | [Model](https://www.modelscope.cn/models/Shanghai_AI_Laboratory/Atria-Dawn-Preview-FP8) |
+| Atria Dawn | Instruct 模型（正式版） | 256K | Coming soon | Coming soon |
+| Atria Dawn FP8 | FP8量化Instruct模型（正式版） | 256K | Coming soon | Coming soon |
+| Atria Dawn Preview | Instruct 模型 | 256K | [Model](https://huggingface.co/internlm/Atria-Dawn-Preview) | [Model](https://www.modelscope.cn/models/Shanghai_AI_Laboratory/Atria-Dawn-Preview) |
+| Atria Dawn Preview FP8 | FP8量化Instruct模型 | 256K| [Model](https://huggingface.co/internlm/Atria-Dawn-Preview-FP8) | [Model](https://www.modelscope.cn/models/Shanghai_AI_Laboratory/Atria-Dawn-Preview-FP8) |
 
 </div>
 
+模型名称为 **Atria Dawn**；API 请求的 `model` 参数使用 `Atria-Dawn`。
 
 ## 性能评估
-我们对 Atria-Dawn 和 Atria-Dawn-Preview 进行了全面评估。以下完整大表与[官网](https://atria-asi.ai/)同步。
+我们对 Atria Dawn 和 Atria Dawn Preview 进行了全面评估。以下完整大表与[官网](https://atria-asi.ai/)同步。
 
 
 <div align="center">
-  <img src="assets/evaluation.jpg" width="100%" alt="Atria-Dawn and Atria-Dawn-Preview Evaluation Results" />
+  <img src="assets/evaluation.jpg" width="100%" alt="Atria Dawn and Atria Dawn Preview Evaluation Results" />
 </div>
 
 <div align="center">
@@ -138,7 +139,7 @@ Atria-Dawn 从以下四个维度赋能智能体任务，重点强化了在科研
 
 ## 部署和在线使用
 
-Atria-Dawn 支持本地部署与在线调用。有关在线调用，请使用您所在地区对应的服务。
+Atria Dawn 支持本地部署与在线调用。有关在线调用，请使用您所在地区对应的服务。
 
 | 地区                | 使用链接                                                                  | 教程                                                                        |
 | ----------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------- |
@@ -167,7 +168,7 @@ wire_api = "responses"
 
 #### 将输入限制为纯文本
 
-`Atria-Dawn` 只接受文本输入。Codex 默认会假设每个模型都支持多模态输入，并会附加通过 `-i/--image` 或 TUI 粘贴的图片；而该端点会因此返回 `400 Atria-Dawn is not a multimodal model` 错误。需要声明模型支持的输入模态，让 Codex 在客户端直接移除图片输入。
+**Atria Dawn** 只接受文本输入。Codex 默认会假设每个模型都支持多模态输入，并会附加通过 `-i/--image` 或 TUI 粘贴的图片；而该端点会因此返回 `400 Atria-Dawn is not a multimodal model` 错误。需要声明模型支持的输入模态，让 Codex 在客户端直接移除图片输入。
 
 ##### 第 1 步：创建模型目录文件
 
@@ -178,7 +179,7 @@ wire_api = "responses"
   "models": [
     {
       "slug": "Atria-Dawn",
-      "display_name": "Atria-Dawn",
+      "display_name": "Atria Dawn",
       "base_instructions": "你是运行在 Codex CLI 中的编程代理。你将在共享工作区中与用户协作，完成软件工程目标。\n\n你只能接收文本输入。你无法获取图片、截图、PDF 或其他二进制附件。如果用户提到你无法查看的附件，请直接说明这一点，并要求用户粘贴相关文本。",
       "supported_reasoning_levels": [
         { "effort": "low", "description": "快速响应，使用较轻量的推理" },
@@ -342,7 +343,7 @@ api_key = "ATRIA_API_KEY"
 provider = "atria"
 # 区分大小写的实际请求名称，与上面的表名不同（上面的表名是本地别名）
 model = "Atria-Dawn"
-display_name = "Atria-Dawn"
+display_name = "Atria Dawn"
 # 必填：缺少此项时，该条目会静默加载失败。请保持为实际限制值，
 # 这样上下文预算和压缩功能才能正常工作。
 max_context_size = 256000

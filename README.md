@@ -7,12 +7,12 @@
 </p>
 
 <div align="center">
-  <img src="assets/atria.png" width="60%" alt="Atria-Dawn" />
+  <img src="assets/atria.png" width="60%" alt="Atria Dawn" />
 </div>
 
 <div align="center">
 
-# Atria-Dawn
+# Atria Dawn
 
 **From Research Questions to Verifiable Results**
 
@@ -65,11 +65,11 @@
 
 ## 🌅 Introduction
 
-**Atria-Dawn** is a new-generation agentic model developed by the **Shanghai Artificial Intelligence Laboratory**. Built on the **744B-parameter MoE GLM-5.2** foundation model, it targets research and engineering scenarios that demand continuous environmental understanding, tool use, and multi-step task completion.
+**Atria Dawn** is a new-generation agentic model developed by the **Shanghai Artificial Intelligence Laboratory**. Built on the **744B-parameter MoE GLM-5.2** foundation model, it targets research and engineering scenarios that demand continuous environmental understanding, tool use, and multi-step task completion.
 
 The model is designed to drive open-ended problems toward **executable, verifiable, and reproducible** results. By combining task objectives with environmental feedback, it supports the full loop of problem analysis, solution design, tool use, code implementation, experiment execution, result analysis, and failure recovery.
 
-Atria-Dawn empowers agentic tasks across four dimensions, with a particular focus on end-to-end delivery in real-world productivity scenarios such as scientific automation and office work:
+Atria Dawn empowers agentic tasks across four dimensions, with a particular focus on end-to-end delivery in real-world productivity scenarios such as scientific automation and office work:
 
 <div align="center">
 
@@ -88,19 +88,21 @@ Atria-Dawn empowers agentic tasks across four dimensions, with a particular focu
 
 | Model | Description | Context | Hugging Face | ModelScope |
 | :--- | :--- | :---: | :---: | :---: |
-| **Atria-Dawn** | Instruct model (full release) | 256K | Coming soon | Coming soon |
-| **Atria-Dawn-FP8** | FP8-quantized Instruct model (full release) | 256K | Coming soon | Coming soon |
-| **Atria-Dawn-Preview** | Instruct model | 256K | [🤗 Model](https://huggingface.co/internlm/Atria-Dawn-Preview) | [🔗 Model](https://www.modelscope.cn/models/Shanghai_AI_Laboratory/Atria-Dawn-Preview) |
-| **Atria-Dawn-Preview-FP8** | FP8-quantized Instruct model | 256K | [🤗 Model](https://huggingface.co/internlm/Atria-Dawn-Preview-FP8) | [🔗 Model](https://www.modelscope.cn/models/Shanghai_AI_Laboratory/Atria-Dawn-Preview-FP8) |
+| **Atria Dawn** | Instruct model (full release) | 256K | Coming soon | Coming soon |
+| **Atria Dawn FP8** | FP8-quantized Instruct model (full release) | 256K | Coming soon | Coming soon |
+| **Atria Dawn Preview** | Instruct model | 256K | [🤗 Model](https://huggingface.co/internlm/Atria-Dawn-Preview) | [🔗 Model](https://www.modelscope.cn/models/Shanghai_AI_Laboratory/Atria-Dawn-Preview) |
+| **Atria Dawn Preview FP8** | FP8-quantized Instruct model | 256K | [🤗 Model](https://huggingface.co/internlm/Atria-Dawn-Preview-FP8) | [🔗 Model](https://www.modelscope.cn/models/Shanghai_AI_Laboratory/Atria-Dawn-Preview-FP8) |
 
 </div>
 
+The model name is **Atria Dawn**. Use `Atria-Dawn` as the `model` value in API requests.
+
 ## 📊 Evaluation Results
 
-We evaluated Atria-Dawn and Atria-Dawn-Preview across search, coding, tool use, productivity, and security benchmarks. The full table below matches the [official website](https://atria-asi.ai/).
+We evaluated Atria Dawn and Atria Dawn Preview across search, coding, tool use, productivity, and security benchmarks. The full table below matches the [official website](https://atria-asi.ai/).
 
 <div align="center">
-  <img src="assets/evaluation.jpg" width="100%" alt="Atria-Dawn and Atria-Dawn-Preview Evaluation Results" />
+  <img src="assets/evaluation.jpg" width="100%" alt="Atria Dawn and Atria Dawn Preview Evaluation Results" />
 </div>
 
 <div align="center">
@@ -144,7 +146,7 @@ Add instructions for local inference, deployment, and environment setup here.
 
 ## 🚀 Deployment & Online Access
 
-Atria-Dawn supports both local deployment and hosted access.
+Atria Dawn supports both local deployment and hosted access.
 
 ### Online Access
 
@@ -185,7 +187,7 @@ wire_api = "responses"
 
 #### Restricting input to text only
 
-`Atria-Dawn` accepts text input only. By default Codex assumes every model is
+**Atria Dawn** accepts text input only. By default Codex assumes every model is
 multimodal and will attach images from `-i/--image` or a TUI paste, which the endpoint
 rejects with `400 Atria-Dawn is not a multimodal model`. Declare the model's
 modalities so Codex strips image input on the client side instead.
@@ -199,7 +201,7 @@ Save this as `~/.codex/atria-catalog.json`:
   "models": [
     {
       "slug": "Atria-Dawn",
-      "display_name": "Atria-Dawn",
+      "display_name": "Atria Dawn",
       "base_instructions": "You are a coding agent running in the Codex CLI. You collaborate with the user in a shared workspace to accomplish their software engineering goals.\n\nYou can only receive text input. Images, screenshots, PDFs, and other binary attachments are not available to you. If the user refers to an attachment you cannot see, say so plainly and ask them to paste the relevant text instead.",
       "supported_reasoning_levels": [
         { "effort": "low", "description": "Fast responses with lighter reasoning" },
@@ -358,7 +360,7 @@ api_key = "ATRIA_API_KEY"
 provider = "atria"
 # case-sensitive wire name, separate from the section key above (a local alias)
 model = "Atria-Dawn"
-display_name = "Atria-Dawn"
+display_name = "Atria Dawn"
 # required — without it the entry silently fails to load. Keep at the real limit
 # so context budgeting and compaction work.
 max_context_size = 256000

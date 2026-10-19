@@ -88,8 +88,8 @@ Atria Dawn empowers agentic tasks across four dimensions, with a particular focu
 
 | Model | Description | Context | Hugging Face | ModelScope |
 | :--- | :--- | :---: | :---: | :---: |
-| **Atria Dawn** | Instruct model (full release) | 256K | Coming soon | Coming soon |
-| **Atria Dawn FP8** | FP8-quantized Instruct model (full release) | 256K | Coming soon | Coming soon |
+| **Atria Dawn** | Instruct model (full release) | 512K | Coming soon | Coming soon |
+| **Atria Dawn FP8** | FP8-quantized Instruct model (full release) | 512K | Coming soon | Coming soon |
 | **Atria Dawn Preview** | Instruct model | 256K | [🤗 Model](https://huggingface.co/internlm/Atria-Dawn-Preview) | [🔗 Model](https://www.modelscope.cn/models/Shanghai_AI_Laboratory/Atria-Dawn-Preview) |
 | **Atria Dawn Preview FP8** | FP8-quantized Instruct model | 256K | [🤗 Model](https://huggingface.co/internlm/Atria-Dawn-Preview-FP8) | [🔗 Model](https://www.modelscope.cn/models/Shanghai_AI_Laboratory/Atria-Dawn-Preview-FP8) |
 
@@ -444,7 +444,8 @@ Questions, suggestions, or collaboration ideas are welcome:
       eprint={2609.15818},
       archivePrefix={arXiv},
       primaryClass={cs.AI},
-      url={https://arxiv.org/abs/2609.15818}, 
+      url={https://arxiv.org/abs/2609.15818},
+      doi={10.48550/ARXIV.2609.15818},
 }
 ```
 <div align="center">

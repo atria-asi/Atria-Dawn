@@ -17,11 +17,11 @@
 
 </div>
 <div align="center" style="line-height: 1;">
-  <a href="https://huggingface.co/internlm/Atria-Dawn-Preview" target="_blank" style="margin: 2px;">
-    <img alt="Hugging Face" src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Atria%20Dawn%20Preview-FFD21E?labelColor=555" style="display: inline-block; vertical-align: middle;"/>
+  <a href="https://huggingface.co/internlm/Atria-Dawn" target="_blank" style="margin: 2px;">
+    <img alt="Hugging Face" src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Atria%20Dawn-FFD21E?labelColor=555" style="display: inline-block; vertical-align: middle;"/>
   </a>
-  <a href="https://www.modelscope.cn/models/Shanghai_AI_Laboratory/Atria-Dawn-Preview" target="_blank" style="margin: 2px;">
-    <img alt="ModelScope" src="https://img.shields.io/badge/ModelScope-Atria%20Dawn%20Preview-624AFF?logo=ModelScope&logoColor=white&labelColor=555" style="display: inline-block; vertical-align: middle;"/>
+  <a href="https://www.modelscope.cn/models/Shanghai_AI_Laboratory/Atria-Dawn" target="_blank" style="margin: 2px;">
+    <img alt="ModelScope" src="https://img.shields.io/badge/ModelScope-Atria%20Dawn-624AFF?logo=ModelScope&logoColor=white&labelColor=555" style="display: inline-block; vertical-align: middle;"/>
   </a>
   <a href="LICENSE" style="margin: 2px;">
     <img alt="License" src="https://img.shields.io/badge/License-MIT-3DA639?labelColor=555" style="display: inline-block; vertical-align: middle;"/>
@@ -80,8 +80,8 @@ Atria Dawn 从以下四个维度赋能智能体任务，重点强化了在科研
 
 | **模型名** | **简介** | **上下文** | **Hugging Face** | **ModelScope** |
 | :---: | :---: | :---: | :---: | :---: |
-| Atria Dawn | Instruct 模型（正式版） | 256K | Coming soon | Coming soon |
-| Atria Dawn FP8 | FP8量化Instruct模型（正式版） | 256K | Coming soon | Coming soon |
+| Atria Dawn | Instruct 模型（正式版） | 512K | [Model](https://huggingface.co/internlm/Atria-Dawn) | [Model](https://www.modelscope.cn/models/Shanghai_AI_Laboratory/Atria-Dawn) |
+| Atria Dawn FP8 | FP8量化Instruct模型（正式版） | 512K | [Model](https://huggingface.co/internlm/Atria-Dawn-FP8) | [Model](https://www.modelscope.cn/models/Shanghai_AI_Laboratory/Atria-Dawn-FP8) |
 | Atria Dawn Preview | Instruct 模型 | 256K | [Model](https://huggingface.co/internlm/Atria-Dawn-Preview) | [Model](https://www.modelscope.cn/models/Shanghai_AI_Laboratory/Atria-Dawn-Preview) |
 | Atria Dawn Preview FP8 | FP8量化Instruct模型 | 256K| [Model](https://huggingface.co/internlm/Atria-Dawn-Preview-FP8) | [Model](https://www.modelscope.cn/models/Shanghai_AI_Laboratory/Atria-Dawn-Preview-FP8) |
 
@@ -142,15 +142,17 @@ Atria Dawn 从以下四个维度赋能智能体任务，重点强化了在科研
 
 Atria Dawn 支持本地部署与在线调用。有关在线调用，请使用您所在地区对应的服务。
 
-| 地区                | 使用链接                                                                  | 教程                                                                        |
-| ----------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| **国内**         | [Link](https://discovery.intern-ai.org.cn/token-plan/home?tabIndex=0) | [Tutorial](https://discovery.intern-ai.org.cn/token-plan/home?tabIndex=3) |
-| **海外** | [Link](https://api.atria-asi.ai/)                                     | [Tutorial](https://api.atria-asi.ai/docs)                                 |
+| 地区 | 使用链接 |
+| --- | --- |
+| **国内** | [Link](https://discovery.intern-ai.org.cn/token-plan/home) |
+| **海外** | [Link](https://discovery.intern-ai.org.cn/token-plan/home?lang=en-US) |
 
 如需进行本地部署，请参考以下部署指南。
 
 - [SGLang](https://github.com/sgl-project/sglang) (v0.5.13.post1+) — 参考 [cookbook](https://cookbook.sglang.io/autoregressive/GLM/GLM-5.2)
 - [vLLM](https://github.com/vllm-project/vllm) (v0.23.0+) — 参考 [recipes](https://recipes.vllm.ai/zai-org/GLM-5.2)
+
+OpenAI 兼容客户端请使用 `https://discovery-api.intern-ai.org.cn/v1`；Anthropic 兼容客户端和 SystemOne 请使用 `https://discovery-api.intern-ai.org.cn`。
 
 ### Codex
 
@@ -162,7 +164,7 @@ model_provider = "atria"
 
 [model_providers.atria]
 name = "Atria"
-base_url = "https://api.atria-asi.ai/v1"
+base_url = "https://discovery-api.intern-ai.org.cn/v1"
 env_key = "ATRIA_API_KEY"
 wire_api = "responses"
 ```
@@ -194,8 +196,8 @@ wire_api = "responses"
       "support_verbosity": false,
       "truncation_policy": { "mode": "tokens", "limit": 10000 },
       "experimental_supported_tools": [],
-      "context_window": 256000,
-      "max_context_window": 256000,
+      "context_window": 512000,
+      "max_context_window": 512000,
       "input_modalities": ["text"]
     }
   ]
@@ -220,7 +222,7 @@ view_image = false
 
 [model_providers.atria]
 name = "Atria"
-base_url = "https://api.atria-asi.ai/v1"
+base_url = "https://discovery-api.intern-ai.org.cn/v1"
 env_key = "ATRIA_API_KEY"
 wire_api = "responses"
 ```
@@ -336,7 +338,7 @@ default_model = "atria/Atria-Dawn"
 [providers.atria]
 type = "openai"
 # 必须包含 /v1，Kimi 会原样追加 /chat/completions
-base_url = "https://api.atria-asi.ai/v1"
+base_url = "https://discovery-api.intern-ai.org.cn/v1"
 # 只能使用字面量：不会展开 ${VAR}，也不会读取 OPENAI_API_KEY
 api_key = "ATRIA_API_KEY"
 
@@ -347,7 +349,7 @@ model = "Atria-Dawn"
 display_name = "Atria Dawn"
 # 必填：缺少此项时，该条目会静默加载失败。请保持为实际限制值，
 # 这样上下文预算和压缩功能才能正常工作。
-max_context_size = 256000
+max_context_size = 512000
 # 发送到接口的 max_tokens 值。缺少此项时，Kimi 会改为发送 max_context_size，
 # Atria 会拒绝该请求（有效范围为 1-65536）。
 max_output_size = 65536

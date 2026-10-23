@@ -18,11 +18,11 @@
 
 </div>
 <div align="center" style="line-height: 1;">
-  <a href="https://huggingface.co/internlm/Atria-Dawn-Preview" target="_blank" style="margin: 2px;">
-    <img alt="Hugging Face" src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Atria%20Dawn%20Preview-FFD21E?labelColor=555" style="display: inline-block; vertical-align: middle;"/>
+  <a href="https://huggingface.co/internlm/Atria-Dawn" target="_blank" style="margin: 2px;">
+    <img alt="Hugging Face" src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Atria%20Dawn-FFD21E?labelColor=555" style="display: inline-block; vertical-align: middle;"/>
   </a>
-  <a href="https://www.modelscope.cn/models/Shanghai_AI_Laboratory/Atria-Dawn-Preview" target="_blank" style="margin: 2px;">
-    <img alt="ModelScope" src="https://img.shields.io/badge/ModelScope-Atria%20Dawn%20Preview-624AFF?logo=ModelScope&logoColor=white&labelColor=555" style="display: inline-block; vertical-align: middle;"/>
+  <a href="https://www.modelscope.cn/models/Shanghai_AI_Laboratory/Atria-Dawn" target="_blank" style="margin: 2px;">
+    <img alt="ModelScope" src="https://img.shields.io/badge/ModelScope-Atria%20Dawn-624AFF?logo=ModelScope&logoColor=white&labelColor=555" style="display: inline-block; vertical-align: middle;"/>
   </a>
   <a href="LICENSE" style="margin: 2px;">
     <img alt="License" src="https://img.shields.io/badge/License-MIT-3DA639?labelColor=555" style="display: inline-block; vertical-align: middle;"/>
@@ -88,8 +88,8 @@ Atria Dawn empowers agentic tasks across four dimensions, with a particular focu
 
 | Model | Description | Context | Hugging Face | ModelScope |
 | :--- | :--- | :---: | :---: | :---: |
-| **Atria Dawn** | Instruct model (full release) | 512K | Coming soon | Coming soon |
-| **Atria Dawn FP8** | FP8-quantized Instruct model (full release) | 512K | Coming soon | Coming soon |
+| **Atria Dawn** | Instruct model (full release) | 512K | [🤗 Model](https://huggingface.co/internlm/Atria-Dawn) | [🔗 Model](https://www.modelscope.cn/models/Shanghai_AI_Laboratory/Atria-Dawn) |
+| **Atria Dawn FP8** | FP8-quantized Instruct model (full release) | 512K | [🤗 Model](https://huggingface.co/internlm/Atria-Dawn-FP8) | [🔗 Model](https://www.modelscope.cn/models/Shanghai_AI_Laboratory/Atria-Dawn-FP8) |
 | **Atria Dawn Preview** | Instruct model | 256K | [🤗 Model](https://huggingface.co/internlm/Atria-Dawn-Preview) | [🔗 Model](https://www.modelscope.cn/models/Shanghai_AI_Laboratory/Atria-Dawn-Preview) |
 | **Atria Dawn Preview FP8** | FP8-quantized Instruct model | 256K | [🤗 Model](https://huggingface.co/internlm/Atria-Dawn-Preview-FP8) | [🔗 Model](https://www.modelscope.cn/models/Shanghai_AI_Laboratory/Atria-Dawn-Preview-FP8) |
 
@@ -155,10 +155,10 @@ Use the service endpoint corresponding to your region.
 
 <div align="center">
 
-| Region | Access | Tutorial |
-| :--- | :--- | :--- |
-| 🌐 **International** | [API Console](https://api.atria-asi.ai/) | [Docs](https://api.atria-asi.ai/docs) |
-| 🇨🇳 **China** | [API Console](https://discovery.intern-ai.org.cn/token-plan/home?tabIndex=0) | [Docs](https://discovery.intern-ai.org.cn/token-plan/home?tabIndex=3) |
+| Region | Access |
+| :--- | :--- |
+| 🌐 **International** | [API Console](https://discovery.intern-ai.org.cn/token-plan/home?lang=en-US) |
+| 🇨🇳 **China** | [API Console](https://discovery.intern-ai.org.cn/token-plan/home) |
 
 </div>
 
@@ -173,6 +173,9 @@ Use the service endpoint corresponding to your region.
 
 </div>
 
+Use `https://discovery-api.intern-ai.org.cn/v1` for OpenAI-compatible clients, and
+`https://discovery-api.intern-ai.org.cn` for Anthropic-compatible clients and SystemOne.
+
 ### Codex
 Add a custom provider to `~/.codex/config.toml`. Codex uses the Responses API.
 
@@ -181,7 +184,7 @@ model = "Atria-Dawn"
 model_provider = "atria"
 [model_providers.atria]
 name = "Atria"
-base_url = "https://api.atria-asi.ai/v1"
+base_url = "https://discovery-api.intern-ai.org.cn/v1"
 env_key = "ATRIA_API_KEY"
 wire_api = "responses"
 ```
@@ -216,8 +219,8 @@ Save this as `~/.codex/atria-catalog.json`:
       "support_verbosity": false,
       "truncation_policy": { "mode": "tokens", "limit": 10000 },
       "experimental_supported_tools": [],
-      "context_window": 256000,
-      "max_context_window": 256000,
+      "context_window": 512000,
+      "max_context_window": 512000,
       "input_modalities": ["text"]
     }
   ]
@@ -243,7 +246,7 @@ model_catalog_json = "~/.codex/atria-catalog.json"
 view_image = false
 [model_providers.atria]
 name = "Atria"
-base_url = "https://api.atria-asi.ai/v1"
+base_url = "https://discovery-api.intern-ai.org.cn/v1"
 env_key = "ATRIA_API_KEY"
 wire_api = "responses"
 ```
@@ -353,7 +356,7 @@ default_model = "atria/Atria-Dawn"
 [providers.atria]
 type = "openai"
 # must include /v1 — Kimi appends /chat/completions verbatim
-base_url = "https://api.atria-asi.ai/v1"
+base_url = "https://discovery-api.intern-ai.org.cn/v1"
 # literal value only: no ${VAR} expansion, and OPENAI_API_KEY is not read
 api_key = "ATRIA_API_KEY"
 
@@ -364,7 +367,7 @@ model = "Atria-Dawn"
 display_name = "Atria Dawn"
 # required — without it the entry silently fails to load. Keep at the real limit
 # so context budgeting and compaction work.
-max_context_size = 256000
+max_context_size = 512000
 # the max_tokens sent on the wire. Without it Kimi sends max_context_size
 # instead, which Atria rejects (valid range is 1-65536).
 max_output_size = 65536
